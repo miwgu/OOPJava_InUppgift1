@@ -5,7 +5,7 @@
  * Project: OOPJava
  * Copyright: MIT
  * <br><br>
- * En klass VilketDjur
+ * En klass VilketDjur som användas i Kund klass
  * Har en instansmetod getNamn
  */
 public class VilketDjur {

@@ -106,13 +106,13 @@ public class HealthyPetsDemo {
 
                 String input = djuretsnamn.toLowerCase(); //metoden för skiftlägeskonvertering från Stora bokstaver till små bokstäver
                 if(input.equals("hund")) {
-                    printGäster(Hund, kunder);
+                    printKunder(Hund, kunder);
                     printMat(h);
                 }else if(input.equals("katt")) {
-                    printGäster(Katt, kunder);
+                    printKunder(Katt, kunder);
                     printMat(k);
                 }else if(input.equals("orm")){
-                    printGäster(Orm, kunder);
+                    printKunder(Orm, kunder);
                     printMat(o);
                 } else{
                     System.out.println("Fel! Det finns inte sådant namn");
@@ -124,7 +124,7 @@ public class HealthyPetsDemo {
         }
     }
 
-    public void printGäster(VilketDjur vilketDjur, List<Kund> kunder){
+    public void printKunder(VilketDjur vilketDjur, List<Kund> kunder){
         System.out.println("Djurets namn: "+ vilketDjur.getNamn());
         for(Kund k: kunder){
             if (k.getVilketdjur()== vilketDjur )
