@@ -132,6 +132,7 @@ public class HealthyPetsDemo {
         Katt,
         Orm,
     }
+
     public void printKunder(VilketDjur vilketDjur, List<Kund> kunder){
         //System.out.println("Djurets namn: "+ vilketDjur.getNamn());
         for(Kund k: kunder){
