@@ -59,7 +59,7 @@ public class HealthyPetsDemo {
         Katt Venus = new Katt("Venus", 5);
         Katt Ove = new Katt("Ove", 3);
         Orm Hypo = new Orm("Hypo", 1);
-        //För att implementera interface VikenMat Instanseras default konstarakt
+        //För att implementera interface VikenMat skapar tre olika objekt
         Hund h=new Hund();
         Katt k=new Katt();
         Orm o=new Orm();
@@ -106,14 +106,17 @@ public class HealthyPetsDemo {
 
                 String input = djuretsnamn.toLowerCase(); //metoden för skiftlägeskonvertering från Stora bokstaver till små bokstäver
                 if(input.equals("hund")) {
-                    printKunder(Hund, kunder);
+                    System.out.println(djurSort.Hund);
                     printMat(h);
+                    printKunder(Hund, kunder);
                 }else if(input.equals("katt")) {
-                    printKunder(Katt, kunder);
+                    System.out.println(djurSort.Katt);
                     printMat(k);
+                    printKunder(Katt, kunder);
                 }else if(input.equals("orm")){
-                    printKunder(Orm, kunder);
+                    System.out.println(djurSort.Orm);
                     printMat(o);
+                    printKunder(Orm, kunder);
                 } else{
                     System.out.println("Fel! Det finns inte sådant namn");
                     djuretsnamn = JOptionPane.showInputDialog("Fel! Det finns inte sådant namn.\nAnge djurets namn");
@@ -124,8 +127,13 @@ public class HealthyPetsDemo {
         }
     }
 
+    public enum djurSort{
+        Hund,
+        Katt,
+        Orm,
+    }
     public void printKunder(VilketDjur vilketDjur, List<Kund> kunder){
-        System.out.println("Djurets namn: "+ vilketDjur.getNamn());
+        //System.out.println("Djurets namn: "+ vilketDjur.getNamn());
         for(Kund k: kunder){
             if (k.getVilketdjur()== vilketDjur )
                 System.out.println(k.getDjur().foderInfo());
