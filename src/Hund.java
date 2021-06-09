@@ -9,17 +9,21 @@
  * Har två instansmetoder, foderainfo och getMatTyp
  * Interface VilkenMat implementeras
  */
-public class Hund extends Djur implements VilkenMat {
-    private String matTyp="Hundfoder";
-    Hund(){}
-    public Hund(String namn, double vikt) {
-        super(namn, vikt);
+public class Hund extends Djur implements CalculateMat {
+    //private String matTyp="Hundfoder";
+    Hund(){
+        super.setMat(MatTyp.HUND.matType);
     }
 
-   // public void calculatePortionFoder(){
-   //     double foder=getVikt()*1000/100;
-   //     System.out.println("Hunden "+getNamn()+" ska få "+String.format("%.1f",foder)+ " g \npå en portion hundfoder." );
-   // }
+    public Hund(String namn, double vikt) {
+        super(namn, vikt);
+        super.setMatvikt(this.calculatePortionFoder());
+    }
+
+@Override
+    public double calculatePortionFoder(){
+        return getVikt()*1000/MatTyp.HUND.matV;
+    }
 
     /**
      * abstrakt metod foderInfo överskuggas (override)
@@ -28,18 +32,18 @@ public class Hund extends Djur implements VilkenMat {
      * visa namnet och  vikten på en portion foder
      * @return meddelande
      */
-    @Override
-    public String foderInfo(){
-        double foder=getVikt()*1000/100;
-        String meddelande="Hunden "+getNamn()+" ska få "+String.format("%.1f",foder)+ " g";
-        return meddelande;
-    }
+//    @Override
+//    public String foderInfo(){
+//        double foder=getVikt()*1000/100;
+//        String meddelande="Hunden "+getNamn()+" ska få "+String.format("%.1f",foder)+ " g";
+//        return meddelande;
+//    }
 
     /**
      * En instansmetod osm hämtar hundarsmatstyp
      * @return matTyp
      */
-    public String getMatTyp() {
-        return matTyp;
-    }
+//    public String getMatTyp() {
+//        return matTyp;
+//    }
 }

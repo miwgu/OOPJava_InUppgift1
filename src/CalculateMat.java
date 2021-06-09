@@ -9,6 +9,6 @@
  * En sorts abstrakt klass där alla metoder är abstrakta
  * Den får ärva egenskaper från flera gränssnitt
  */
-public interface VilkenMat {
-    String getMatTyp(); // blir automatiskt public abstract
+public interface CalculateMat {
+    double calculatePortionFoder(); // blir automatiskt public abstract
 }

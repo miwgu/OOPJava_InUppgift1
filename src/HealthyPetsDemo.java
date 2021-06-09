@@ -34,9 +34,9 @@ public class HealthyPetsDemo {
     //}
 
     // Metoden printMat genom att inplementera interface VilkenMat
-    public void printMat(VilkenMat whatever){
-        System.out.println("Mat: " +whatever.getMatTyp());
-    }
+    //public void printMat(CalculateMat whatever){
+    //    System.out.println("Mat: " +whatever.getMatTyp());
+    //}
 
     HealthyPetsDemo() {
         //         Djur[] alladjur = {
@@ -106,16 +106,16 @@ public class HealthyPetsDemo {
 
                 String input = djuretsnamn.toLowerCase(); //metoden för skiftlägeskonvertering från Stora bokstaver till små bokstäver
                 if(input.equals("hund")) {
-                    System.out.println(djurSort.Hund);
-                    printMat(h);
+                    //System.out.println(djurSort.Hund);
+                    //printMat(h);
                     printKunder(Hund, kunder);
                 }else if(input.equals("katt")) {
-                    System.out.println(djurSort.Katt);
-                    printMat(k);
+                    //System.out.println(djurSort.Katt);
+                    //printMat(k);
                     printKunder(Katt, kunder);
                 }else if(input.equals("orm")){
-                    System.out.println(djurSort.Orm);
-                    printMat(o);
+                    //System.out.println(djurSort.Orm);
+                    //printMat(o);
                     printKunder(Orm, kunder);
                 } else{
                     System.out.println("Fel! Det finns inte sådant namn");
@@ -127,11 +127,11 @@ public class HealthyPetsDemo {
         }
     }
 
-    public enum djurSort{
+    /*public enum djurSort{
         Hund,
         Katt,
         Orm,
-    }
+    }*/
 
     public void printKunder(VilketDjur vilketDjur, List<Kund> kunder){
         //System.out.println("Djurets namn: "+ vilketDjur.getNamn());

@@ -13,7 +13,7 @@ public class Kund {
     private Djur djur;
 
 
-           public Kund(VilketDjur vilketdjur, Djur djur){
+    public Kund(VilketDjur vilketdjur, Djur djur){
         this.vilketdjur=vilketdjur;
         this.djur=djur;
     }
@@ -26,9 +26,11 @@ public class Kund {
         return djur;
     }
 
-    //public void setDjur(Djur d) {
-    //}
+    public void setVilketdjur(VilketDjur vilketdjur) {
+        this.vilketdjur = vilketdjur;
+    }
 
-    //public void setVilketdjur(VilketDjur v) {
-    //}
+    public void setDjur(Djur djur) {
+        this.djur = djur;
+    }
 }

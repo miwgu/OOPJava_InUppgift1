@@ -9,18 +9,22 @@
  * Har två instansmetoder, foderainfo och getMatTyp
  * Interface VilkenMat implementeras
  */
-public class Orm extends Djur implements VilkenMat {
-    private String matTyp="Ormpellets";
-    Orm(){}
+public class Orm extends Djur implements CalculateMat {
+    //private String matTyp="Ormpellets";
+    Orm(){
+        super.setMat(MatTyp.ORM.matType);
+    }
     public Orm(String namn, double vikt) {
+
         super(namn, vikt);
+        super.setMat(MatTyp.ORM.matType);
+        super.setMatvikt(this.calculatePortionFoder());
     }
 
 
-    //public void calculatePortionFoder() {
-    //    double foder = 20.0;
-    //    System.out.println("Ormen "+getNamn() + " ska få " + String.format("%.1f",foder) + " g \normpellets.");
-    //}
+    public double calculatePortionFoder() {
+       return MatTyp.ORM.matV;
+    }
     /**
      * Abstaraktklassen Djur arvas
      * abstrakt metod foderInfo överskuggas (override)
@@ -29,19 +33,19 @@ public class Orm extends Djur implements VilkenMat {
      * visa namnet och  vikten på en portion 2og ormpellets
      * @return meddelande
      */
-    @Override
-    public String foderInfo() {
-        double foder = 20.0;
-        String meddelande = "Ormen "+getNamn() + " ska få " + String.format("%.1f",foder) + " g";
-        return meddelande;
-    }
+//    @Override
+//    public String foderInfo() {
+//        double foder = 20.0;
+//        String meddelande = "Ormen "+getNamn() + " ska få " + String.format("%.1f",foder) + " g";
+//        return meddelande;
+//    }
     /**
      * En instansmetod osm hämtar ormarssmatstyp
      * Interface VilkenMat överskuggas(override)
      * @return matTyp
      */
-    @Override
-    public String getMatTyp() {
-        return matTyp;
-    }
+//    @Override
+//    public String getMatTyp() {
+//        return matTyp;
+//    }
 }
